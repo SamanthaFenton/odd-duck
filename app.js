@@ -53,7 +53,26 @@ function handleProductClick(event) {
     for (let i = 0; i < allProducts.length; i++) {
       if (clickedProduct === allProducts[i].name) {
         allProducts[i].clicks;
+        break;
       }
     }
+    if (clicks === maxClicksAllowed) {
+      productContainer.removeEventListener("click", handleProductClick);
+      productContainer.className = "no-voting";
+      resultsButton.addEventListener("click", renderResults);
+      resultsButton.className = "clicks-allowed";
+    } else {
+      renderProducts();
+    }
+  }
+}
+
+function renderResults() {
+  console.log(Results);
+  let ul = document.querySelector("ul");
+  for (let i = 0; i < allProducts.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = `${allProducts[i].name} had ${allProducts[i].views} views and was clicked on ${allProducts[i].clicks} times.`;
+    ul.appendChild(li);
   }
 }
