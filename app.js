@@ -76,3 +76,27 @@ function renderResults() {
     ul.appendChild(li);
   }
 }
+
+const bag = new Product("bag", "Images/bag.jpg");
+const banana = new Product("banana", "Images/banana.jpg");
+const bathroom = new Product("bathroom", "Images/bathroom.jpg");
+const boots = new Product("boots", "Images/boots.jpg");
+const breakfast = new Product("breakfast", "Images/breakfast.jpg");
+const bubblegum = new Product("bubblgum", "Images/bubblegum.jpg");
+const chair = new Product("chair", "Images/chair.jpg");
+const cthulhu = new Product("cthulhu", "Images/cthulhu.jpg");
+const dogduck = new Product("dog-duck", "Images/dog-duck.jpg");
+const dragon = new Product("dragon", "Images/dragon.jpg");
+const pen = new Product("pen", "Images/pen.jpg");
+const petsweep = new Product("pet-sweep", "Images/pet-sweep.jpg");
+const scissors = new Product("scissors", "Images/scissors.jpg");
+const shark = new Product("shark", "Images/shark.jpg");
+const sweep = new Product("sweep", "Images/sweep.png");
+const tauntaun = new Product("tauntaun", "Images/tauntaun.jpg");
+const unicorn = new Product("unicorn", "Images/unicorn.jpg");
+const watercan = new Product("water-can", "Images/water-can.jpg");
+const wine = new Product("wine-glass", "Images/wine-glass.jpg");
+
+renderProducts();
+
+productContainer.addEventListener("click", handleProductClick);
