@@ -1,0 +1,19 @@
+*/ {
+  box-sizing: border-box;
+  background-color: aliceblue;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 5fr 2fr;
+  width: 1024px;
+  margin: 3rem auto;
+  border: 1px;
+}
+header {
+  background-color: teal;
+  color: mintcream;
+  font-family: cursive;
+  font-size: 1.5rem;
+}
