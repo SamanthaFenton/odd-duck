@@ -13,6 +13,10 @@ console.log("clicks");
 
 let maxClicksAllowed = 5;
 
+function getRandomNumber() {
+  return Math.floor(Math.random() * allProducts.length);
+}
+
 let allProducts = [];
 
 function Product(name, src) {
@@ -50,6 +54,7 @@ function handleProductClick(event) {
   } else {
     clicks++;
     let clickedProduct = event.target.alt;
+    console.log("clickedProduct");
     for (let i = 0; i < allProducts.length; i++) {
       if (clickedProduct === allProducts[i].name) {
         allProducts[i].clicks;

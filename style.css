@@ -4,6 +4,7 @@
 }
 
 .grid {
+  width: 75%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 4fr 2fr;
