@@ -3,7 +3,6 @@ console.log("strict");
 
 const productContainer = document.querySelector("section");
 const resultsButton = document.querySelector("section + div");
-
 const image1 = document.querySelector("section img:first-child");
 const image2 = document.querySelector("section img:nth-child(2)");
 const image3 = document.querySelector("section img:nth-child(3)");
@@ -26,7 +25,6 @@ function Product(name, src) {
   this.views = 0;
   allProducts.push(this);
 }
-
 function renderProducts() {
   let product1 = getRandomNumber();
   let product2 = getRandomNumber();
@@ -34,6 +32,10 @@ function renderProducts() {
 
   while (product1 === product2) {
     product2 = getRandomNumber();
+    // cannot do this without help as I dont know how to rotate 3 options
+  }
+  while (product2 === product3) {
+    product3 = getRandomNumber();
     // cannot do this without help as I dont know how to rotate 3 options
   }
 
@@ -54,7 +56,6 @@ function handleProductClick(event) {
   } else {
     clicks++;
     let clickedProduct = event.target.alt;
-    console.log("clickedProduct");
     for (let i = 0; i < allProducts.length; i++) {
       if (clickedProduct === allProducts[i].name) {
         allProducts[i].clicks;
@@ -73,7 +74,7 @@ function handleProductClick(event) {
 }
 
 function renderResults() {
-  console.log(Results);
+  console.log("Results");
   let ul = document.querySelector("ul");
   for (let i = 0; i < allProducts.length; i++) {
     let li = document.createElement("li");

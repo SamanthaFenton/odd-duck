@@ -71,3 +71,8 @@ footer {
   font-size: 1.2rem;
   padding: 2rem;
 }
+
+.no-voting img:hover {
+  border: 5px solid black;
+  cursor: not-allowed;
+}
