@@ -9,6 +9,8 @@ const image3 = document.querySelector("section img:nth-child(3)");
 
 let clicks = 0;
 console.log("clicks");
+let views = 0;
+console.log("views");
 
 let maxClicksAllowed = 25;
 
@@ -55,6 +57,9 @@ function renderProducts() {
   allProducts[product1].views++;
   allProducts[product2].views++;
   allProducts[product3].views++;
+  allProducts[product1].clicks++;
+  allProducts[product2].clicks++;
+  allProducts[product3].clics++;
 }
 
 function handleProductClick(event) {
@@ -106,6 +111,7 @@ function renderChart() {
 
   const data = {
     labels: productName,
+    backgroundcolor: ["#ffffff"],
     datasets: [
       {
         label: "Times Viewed",
