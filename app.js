@@ -2,7 +2,7 @@
 console.log("strict");
 
 const productContainer = document.querySelector("section");
-const resultsButton = document.querySelector("section + div");
+const resultsButton = document.querySelector("button");
 const image1 = document.querySelector("section img:first-child");
 const image2 = document.querySelector("section img:nth-child(2)");
 const image3 = document.querySelector("section img:nth-child(3)");
@@ -10,7 +10,7 @@ const image3 = document.querySelector("section img:nth-child(3)");
 let clicks = 0;
 console.log("clicks");
 
-let maxClicksAllowed = 5;
+let maxClicksAllowed = 25;
 
 function getRandomNumber() {
   return Math.floor(Math.random() * allProducts.length);
@@ -38,6 +38,13 @@ function renderProducts() {
     product3 = getRandomNumber();
     // cannot do this without help as I dont know how to rotate 3 options
   }
+  while (product3 === product1) {
+    product3 = getRandomNumber();
+  }
+
+  /*for (let i = 0; i < allProducts.length; i++) {
+    let li = document.createElement("li");
+    li.textContent = `${allProducts[i].name} had ${allProducts[i].views} views and was clicked on ${allProducts[i].clicks} times.`;*/
 
   image1.src = allProducts[product1].src;
   image2.src = allProducts[product2].src;
@@ -64,9 +71,9 @@ function handleProductClick(event) {
     }
     if (clicks === maxClicksAllowed) {
       productContainer.removeEventListener("click", handleProductClick);
-      productContainer.className = "no-voting";
+      productContainer.className = "clicks-not-allowed";
       resultsButton.addEventListener("click", renderResults);
-      resultsButton.className = "clicks-allowed";
+      resultsButton.className = "clicks-not-allowed";
     } else {
       renderProducts();
     }

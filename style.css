@@ -57,12 +57,6 @@ header {
   grid-row-start: 2;
   grid-row-end: 3;
 }
-#button2 {
-  grid-column-start: 3;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
-}
 
 footer {
   background-color: teal;
@@ -72,7 +66,7 @@ footer {
   padding: 2rem;
 }
 
-.no-voting img:hover {
+.clicks-not-allowed img:hover {
   border: 5px solid black;
   cursor: not-allowed;
 }
