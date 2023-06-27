@@ -19,6 +19,7 @@ function getRandomNumber() {
 }
 
 let allProducts = [];
+let usedProducts = [];
 
 function Product(name, src) {
   this.name = name;
@@ -32,21 +33,18 @@ function renderProducts() {
   let product2 = getRandomNumber();
   let product3 = getRandomNumber();
 
-  while (product1 === product2) {
+  while (
+    product1 === product2 ||
+    product2 === product3 ||
+    product3 === product1 ||
+    usedProducts.includes(product1) ||
+    usedProducts.includes(product2) ||
+    usedProducts.includes(product3)
+  ) {
+    product1 = getRandomNumber();
     product2 = getRandomNumber();
-    // cannot do this without help as I dont know how to rotate 3 options
-  }
-  while (product2 === product3) {
-    product3 = getRandomNumber();
-    // cannot do this without help as I dont know how to rotate 3 options
-  }
-  while (product3 === product1) {
     product3 = getRandomNumber();
   }
-
-  /*for (let i = 0; i < allProducts.length; i++) {
-    let li = document.createElement("li");
-    li.textContent = `${allProducts[i].name} had ${allProducts[i].views} views and was clicked on ${allProducts[i].clicks} times.`;*/
 
   image1.src = allProducts[product1].src;
   image2.src = allProducts[product2].src;
@@ -60,6 +58,9 @@ function renderProducts() {
   allProducts[product1].clicks++;
   allProducts[product2].clicks++;
   allProducts[product3].clics++;
+
+  usedProducts = [];
+  usedProducts.push[(product1, product2, product3)];
 }
 
 function handleProductClick(event) {
