@@ -72,7 +72,7 @@ function handleProductClick(event) {
     if (clicks === maxClicksAllowed) {
       productContainer.removeEventListener("click", handleProductClick);
       productContainer.className = "clicks-not-allowed";
-      resultsButton.addEventListener("click", renderResults);
+      resultsButton.addEventListener("click", renderChart);
       resultsButton.className = "clicks-not-allowed";
     } else {
       renderProducts();
@@ -88,6 +88,49 @@ function renderResults() {
     li.textContent = `${allProducts[i].name} had ${allProducts[i].views} views and was clicked on ${allProducts[i].clicks} times.`;
     ul.appendChild(li);
   }
+}
+
+function renderChart() {
+  const productName = [];
+  const productViews = [];
+  const productClicks = [];
+
+  for (let i = 0; i < allProducts.length; i++) {
+    productName.push(allProducts[i].name);
+    productViews.push(allProducts[i].views);
+    productClicks.push(allProducts[i].clicks);
+  }
+  console.log(productName);
+  console.log(productViews);
+  console.log(productClicks);
+
+  const data = {
+    labels: productName,
+    datasets: [
+      {
+        label: "Times Viewed",
+        data: productViews,
+        backgroundcolor: ["#d64161"],
+        bordercolor: ["#3e4444"],
+        borderwidth: 1,
+      },
+      {
+        label: "Times Clicked",
+        data: productClicks,
+        backgroundcolor: ["#d5e1df"],
+        bordercolor: ["#3e4444"],
+        borderwidth: 1,
+      },
+    ],
+  };
+
+  const config = {
+    type: "bar",
+    data: data,
+  };
+
+  const resultsChart = document.getElementById("myChart");
+  const results = new Chart(resultsChart, config);
 }
 
 const bag = new Product("bag", "Images/bag.jpg");
