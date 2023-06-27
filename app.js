@@ -78,7 +78,6 @@ function handleProductClick(event) {
       productContainer.removeEventListener("click", handleProductClick);
       productContainer.className = "clicks-not-allowed";
       resultsButton.addEventListener("click", renderChart);
-      resultsButton.className = "clicks-not-allowed";
     } else {
       renderProducts();
     }

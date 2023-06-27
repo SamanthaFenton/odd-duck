@@ -9,7 +9,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 4fr 2fr;
   width: 1024px;
-  margin: 3rem auto;
+  margin: 4rem;
   border: 1px;
   background-color: antiquewhite;
   padding: 2.5rem;
@@ -68,7 +68,7 @@ section {
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
-  margin-top: 2rem;
+  margin-left: 4rem;
 }
 
 #myChart {
@@ -81,6 +81,7 @@ footer {
   font-family: cursive;
   font-size: 1.2rem;
   padding: 2rem;
+  text-align: end;
 }
 
 .clicks-not-allowed img:hover {
