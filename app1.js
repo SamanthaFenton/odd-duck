@@ -1,4 +1,4 @@
-/*"use strict";
+"use strict";
 console.log("strict");
 
 const productContainer = document.querySelector("section");
@@ -137,6 +137,7 @@ function renderChart() {
 
   const resultsChart = document.getElementById("myChart");
   const results = new Chart(resultsChart, config);
+  saveMode();
 }
 
 const bag = new Product("bag", "Images/bag.jpg");
@@ -161,4 +162,26 @@ const wine = new Product("wine-glass", "Images/wine-glass.jpg");
 
 renderProducts();
 
-productContainer.addEventListener("click", handleProductClick);*/
+productContainer.addEventListener("click", handleProductClick);
+
+/*function saveMode() {
+  localStorage.setItem("productName", productName);
+  localStorage.setItem("productViews", productViews);
+  localStorage.setItem("productClicks", productClicks);
+}
+saveMode();*/
+
+/*function saveMode() {
+  let mode1 = JSON.stringify(productName);
+  localStorage.setItem("productName", mode1);
+  let mode2 = JSON.stringify(productViews);
+  localStorage.setItem("productViews", mode2);
+  let mode3 = JSON.stringify(productClicks);
+  localStorage.setItem("productClicks", mode3);
+}*/
+document.getElementById("myChart").addEventListener("renderChart", saveMode);
+let quizData = [productName, productViews, productClicks];
+function saveMode() {
+  let mode = JSON.stringify(quizData);
+  localStorage.setItem("quizData", mode);
+}
